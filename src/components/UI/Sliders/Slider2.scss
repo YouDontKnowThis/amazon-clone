@@ -1,0 +1,51 @@
+.slider__two {
+  width: 95%;
+  margin: 0 auto;
+  .slider__twoMain {
+    background-color: #fff;
+    width: 100%;
+    .slider__product {
+      position: relative;
+      width: 100%;
+      height: auto;
+      img {
+        width: 100%;
+        object-fit: contain;
+        transition: all 0.5s ease;
+        &:hover {
+          transform: scale(1.04);
+        }
+      }
+      .to__basket {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        padding: 8px;
+        text-align: center;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #f5b664;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: #d19e5b;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .slider__two {
+    .slider__twoMain {
+      .slider__product {
+        .to__basket {
+          padding: 2px;
+          .MuiSvgIcon-root {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

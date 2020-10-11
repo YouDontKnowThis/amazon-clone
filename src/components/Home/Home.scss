@@ -1,0 +1,52 @@
+.home {
+  display: flex;
+  justify-content: center;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  .home__container {
+    width: 100%;
+    h2 {
+      width: 95%;
+      margin: auto;
+      padding: 15px 0;
+      color: #333;
+      font-weight: 500;
+    }
+    .ads__one {
+      width: 95%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      .ads {
+        width: 24%;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .ads__two {
+      width: 95%;
+      margin: 10px auto;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .cuisine__maison {
+      margin: 20px 0;
+    }
+  }
+}
+
+@media (max-width: 735px) {
+  .home {
+    .home__container {
+      .home__row {
+        width: 98%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

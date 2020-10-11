@@ -1,0 +1,57 @@
+.checkoutProduct {
+  display: flex;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  .info {
+    padding-left: 20px;
+    .rating {
+      img {
+        margin: 0 -6px;
+        width: 35px;
+        height: 35px;
+        object-fit: contain;
+      }
+    }
+    .title {
+      font-size: 17px;
+      font-weight: 800;
+    }
+    .price {
+      margin-top: 5px;
+    }
+    button {
+      background: #f0c14b;
+      border: 1px solid;
+      border-color: #a88734 #9c7e31 #846a29;
+      margin-top: 10px;
+      color: #111;
+    }
+  }
+
+  .image {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+  }
+}
+
+.delete {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/*
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+*/

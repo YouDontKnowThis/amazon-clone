@@ -11,9 +11,11 @@ function CheckoutProduct(props) {
         <p className="title">{props.title}</p>
         <p className="price">{props.price}</p>
 
-        <button onClick={() => props.removeFromBasket(props.id)}>
-          Remove From Basket
-        </button>
+        {!props.hideButton && (
+          <button onClick={() => props.removeFromBasket(props.id)}>
+            Remove From Basket
+          </button>
+        )}
       </div>
     </div>
   );

@@ -9,14 +9,7 @@
   transition: all 0.5s ease-in-out;
   .info {
     padding-left: 20px;
-    .rating {
-      img {
-        margin: 0 -6px;
-        width: 35px;
-        height: 35px;
-        object-fit: contain;
-      }
-    }
+
     .title {
       font-size: 17px;
       font-weight: 800;
@@ -55,3 +48,16 @@
   }
 }
 */
+
+@media screen and (max-width: 795px) {
+  .checkoutProduct {
+    .info {
+      padding-left: 15px;
+    }
+    .image {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+  }
+}

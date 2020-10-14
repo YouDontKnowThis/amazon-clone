@@ -4,7 +4,9 @@ import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
 import CurrencyFormat from "react-currency-format";
 import { Link, useHistory } from "react-router-dom";
 import { useElements, useStripe, CardElement } from "@stripe/react-stripe-js";
+import * as actionTypes from "../../../store/actions/actionTypes";
 import axios from "../../../axios";
+import { dtb } from "../../../firebase";
 import "./Payment.scss";
 
 function Payment(props) {
@@ -34,9 +36,12 @@ function Payment(props) {
         url: `/payments/create?total=${totalPrice * 100}`,
       });
       setClientSecret(response.data.clientSecret);
+      console.log("USER >>>", props.user);
     };
     getClientSecret();
   }, [props.basket]);
+
+  console.log("THE SECRET IS >>>", clientSecret);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,9 +54,22 @@ function Payment(props) {
         },
       })
       .then(({ paymentIntent }) => {
+        dtb
+          .collection("users")
+          .doc(props.user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: props.basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        props.emptyBasketHandler();
 
         history.replace("/orders");
       });
@@ -109,10 +127,7 @@ function Payment(props) {
                   <CurrencyFormat
                     renderText={(value) => (
                       <>
-                        <p>
-                          Subtotal {`(${props.basket.length} items) `} :
-                          <strong>{` ${value}`}</strong>
-                        </p>
+                        <h3>Order Total : {value}</h3>
                       </>
                     )}
                     decimalScale={2}
@@ -143,4 +158,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Payment);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    emptyBasketHandler: () => dispatch({ type: actionTypes.EMPTY_BASKET }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Payment);

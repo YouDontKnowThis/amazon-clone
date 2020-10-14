@@ -1,0 +1,37 @@
+.order {
+  padding: 40px;
+  margin: 20px 0;
+  border: 1px solid lightgray;
+  background-color: #fff;
+  position: relative;
+
+  .order__id {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+  }
+
+  .order__total {
+    font-weight: 500;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  .order {
+    padding: 10px;
+
+    h2 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 12px;
+    }
+    .order__id {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      font-size: 12px;
+    }
+  }
+}

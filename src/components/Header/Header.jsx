@@ -46,7 +46,7 @@ function Header(props) {
           </NavLink>
         </div>
         <div className="header__option">
-          <NavLink to="/">
+          <NavLink to="/orders">
             <span className="header__optionLineOne">Returns</span>
             <span className="header__optionLineTwo">& Orders</span>
           </NavLink>

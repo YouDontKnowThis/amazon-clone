@@ -101,5 +101,22 @@
     .header__search {
       display: none;
     }
+    .header__nav {
+      .header__option a {
+        text-decoration: none;
+        display: flex;
+        color: #fff;
+        flex-direction: column;
+        margin-right: 10px;
+        margin-left: 10px;
+        .header__optionLineOne {
+          font-size: 8px;
+        }
+        .header__optionLineTwo {
+          font-size: 12px;
+          font-weight: 800;
+        }
+      }
+    }
   }
 }

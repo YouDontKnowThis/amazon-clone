@@ -192,7 +192,7 @@ export const menFashion = [
     title: "product Name",
     price: 19.35,
     image:
-      "https://lh3.googleusercontent.com/proxy/ppqoku0hx12EwW0P7obFDLK_KRvdeUUiQ7AZ7DYRub4vfwdhtp60f1beiX02NFzYejlB7C3zEj3QF3rIXHBgESB0ksKNTchwKzE4IIkWEANuPqZVWOj9el5jNcyE3J-e3JbpUocVwoVP6-HrYPbHExlNXmb7eE0",
+      "https://i.pinimg.com/474x/6c/f6/83/6cf68383154b58bda0c137ceed9eaecd.jpg",
   },
   {
     id: 1006,
